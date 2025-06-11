@@ -1,11 +1,11 @@
 async function baixar() {
-    const url = "https://683109806205ab0d6c3b0d7c.mockapi.io/api/v1/servers"
+    const url = "http://127.0.0.1:8000/api/v1/servers"
     const resposta = await fetch(url)
     const json = await resposta.json()
     return json
 }
 
-const servidor = "https://youtube.com"
+const servidor = "https://google.com"
 
 let retorno =  baixar() 
 
@@ -38,8 +38,8 @@ document.getElementById("linha").innerHTML += coluna1
 document.getElementById("linha").innerHTML += coluna2
 
 retorno.then( ret => { 
-    document.getElementById("pc1").innerHTML = ret[5].name 
-    document.getElementById("pc1link").setAttribute("href",`${servidor}/${ret[5].port}`)
+    document.getElementById("pc1").innerHTML = ret[3].name 
+    document.getElementById("pc1link").setAttribute("href",`${servidor}/${ret[3].port}`)
 }) 
 
 retorno.then( ret => { 
